@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snacks - HomeMade Pickles & Snacks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<section class="product-category">
+    <div class="product-grid">
+
+        <!-- Murukulu -->
+        <div class="product">
+      <img src="{{ url_for('static', filename='images/murukulu.jpg') }}" alt="Murukulu" />
+      <h3>Murukulu</h3>
+      <p>Traditional Andhra-style snack.</p>
+      <p><strong>Price:</strong> ₹50 per 100g</p>
+      <form action="{{ url_for('add_to_cart', product_id='murukulu') }}" method="POST">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+        <!-- Chekkalu -->
+        <div class="product">
+      <img src="{{ url_for('static', filename='images/chekkalu.jpg') }}" alt="Chekkalu" />
+      <h3>Chekkalu</h3>
+      <p>Traditional crispy rice flour snack.</p>
+      <p><strong>Price:</strong> ₹90 per 250g</p>
+      <form action="{{ url_for('add_to_cart', product_id='chekkalu') }}" method="POST">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div> 
+
+        <!-- Boondi -->
+        <div class="product">
+      <img src="{{ url_for('static', filename='images/boondi.jpg') }}" alt="Boondi" />
+      <h3>Boondi</h3>
+      <p>Spicy boondi mix for a quick crunch.</p>
+      <p><strong>Price:</strong> ₹80 per 250g</p>
+      <form action="{{ url_for('add_to_cart', product_id='Boondi') }}" method="POST">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+        <!-- Mixture -->
+        <div class="product">
+      <img src="{{ url_for('static', filename='images/mixture.jpg') }}" alt="Mixture" />
+      <h3>Mixture</h3>
+      <p>South Indian style crunchy snack mix.</p>
+      <p><strong>Price:</strong> ₹90 per 250g</p>
+      <form action="{{ url_for('add_to_cart', product_id='mixture') }}" method="POST">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 HomeMade Pickles & Snacks. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

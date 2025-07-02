@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - HomeMade Pickles & Snacks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <section class="about">
+        <div class="about-text">
+            <p>
+                Welcome to <strong>HomeMade Pickles & Snacks</strong> – your go-to place for authentic homemade flavors.
+                Our passion lies in preserving the traditional recipes passed down through generations. We make each pickle
+                and snack with the finest ingredients, hygiene, and lots of love.
+            </p>
+            <p>
+                Whether you're craving the tang of a classic mango pickle, the heat of mutton pickle, or the crisp crunch
+                of chekkalu and murukulu – we've got you covered. All our products are made at home using traditional
+                methods without any added preservatives.
+            </p>
+            <p>
+                Thank you for supporting local and handmade. We hope you enjoy the taste of tradition with every bite!
+            </p>
+        </div>
+
+        <div class="about-image">
+            <img src="{{ url_for('static', filename='images/backgrounddesign.jpg') }}" alt="Homemade Products">
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 HomeMade Pickles & Snacks. All rights reserved.</p>
+    </footer>
+</body>
+</html>

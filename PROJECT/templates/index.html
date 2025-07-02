@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Made Pickles and Snacks – Taste the Best!</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="background">
+
+  <!-- Use the included navbar only -->
+  {% include 'navbar.html' %}
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container white-box">
+      <h1>Welcome to Home Made Pickles & Snacks ❤️</h1>
+      <p>Taste the Best – Authentic, Traditional, and Delicious!</p>
+    </div>
+  </header>
+
+  <!-- Featured Products or Categories -->
+  <section class="container white-box product-category">
+    <h2>Our Specials</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="{{ url_for('static', filename='images/mangopickle.jpg') }}" alt="Mango Pickle">
+        <h3>Mango Pickle</h3>
+        <p>₹120 for 250g</p>
+        <a href="{{ url_for('veg_pickles') }}" class="btn">Shop Now</a>
+      </div>
+      <div class="product">
+        <img src="{{ url_for('static', filename='images/chickenpickle.jpg') }}" alt="Chicken Pickle">
+        <h3>Chicken Pickle</h3>
+        <p>₹180 for 250g</p>
+        <a href="{{ url_for('non_veg_pickles') }}" class="btn">Shop Now</a>
+      </div>
+      <div class="product">
+        <img src="{{ url_for('static', filename='images/murukulu.jpg') }}" alt="Murukulu">
+        <h3>Murukulu</h3>
+        <p>₹60 for 100g</p>
+        <a href="{{ url_for('snacks') }}" class="btn">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 HomeMade Pickles & Snacks. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

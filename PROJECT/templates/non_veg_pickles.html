@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Non-Veg Pickles - HomeMade Pickles & Snacks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <header>
+        <h1>Non-Veg Pickles</h1>
+    </header>
+
+    <section class="product-category">
+        <div class="product-grid">
+
+            <!-- Chicken Pickle -->
+            <div class="product">
+      <img src="{{ url_for('static', filename='images/chickenpickle.jpg') }}" alt="Chicken Pickle" />
+      <h3>Chicken Pickle</h3>
+      <p>Spicy Andhra-style chicken pickle.</p>
+      <p><strong>Price:</strong> ₹250 per 250g</p>
+      <form action="{{ url_for('add_to_cart', product_id='chicken') }}" method="POST">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+            <!-- Mutton Pickle -->
+            <div class="product">
+      <img src="{{ url_for('static', filename='images/muttonpickle.jpg') }}" alt="Mutton Pickle">
+      <h3>Mutton Pickle</h3>
+      <p>Spicy Andhra-style Mutton pickle.</p>
+      <p><strong>Price:</strong> ₹300 per 250g</p>
+      <form action="{{ url_for('add_to_cart', product_id='chicken') }}" method="POST">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+            <!-- Prawn Pickle -->
+            <div class="product">
+      <img src="{{ url_for('static', filename='images/prawnpickle.jpg') }}" alt="Prawn Pickle" />
+      <h3>Prawn Pickle</h3>
+      <p>Delicious prawn pickle with spices.</p>
+      <p><strong>Price:</strong> ₹300 per 250g</p>
+      <form action="{{ url_for('add_to_cart', product_id='prawn') }}" method="POST">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+            <!-- Fish Pickle -->
+            <div class="product">
+      <img src="{{ url_for('static', filename='images/fishpickle.jpg') }}" alt="Fish Pickle">
+      <h3>Fish Pickle</h3>
+      <p>Delicious Fish pickle with spices.</p>
+      <p><strong>Price:</strong> ₹260 per 250g</p>
+      <form action="{{ url_for('add_to_cart', product_id='Fish') }}" method="POST">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 HomeMade Pickles & Snacks. All rights reserved.</p>
+    </footer>
+</body>
+</html>

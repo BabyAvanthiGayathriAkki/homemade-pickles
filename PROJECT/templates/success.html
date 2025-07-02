@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success – Home Made Pickles and Snacks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-image: url('{{ url_for("static", filename="images/backgrounddesign.jpg") }}');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .success-container {
+            width: 500px;
+            margin: 100px auto;
+            background-color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .success-container h2 {
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .success-container p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .success-container a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            background-color: #e67300;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+        }
+
+        .success-container a:hover {
+            background-color: #cc6600;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="success-container">
+        <h2>✅ Success!</h2>
+        <p>Your action was completed successfully.</p>
+        <a href="{{ url_for('index') }}">Return to Home</a>
+    </div>
+
+    <footer>
+        <p>© 2025 HomeMade Pickles & Snacks. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

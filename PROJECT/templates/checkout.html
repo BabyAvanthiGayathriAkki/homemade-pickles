@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - HomeMade Pickles & Snacks</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<section class="checkout">
+  <h1>Checkout</h1>
+
+  {% if cart_items %}
+    <ul>
+      {% for item in cart_items %}
+        <li>{{ item.name }} — ₹{{ item.price }} × {{ item.quantity }} = ₹{{ item.price * item.quantity }}</li>
+      {% endfor %}
+    </ul>
+
+    <form action="#" method="POST">
+      <label for="name">Full Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="address">Shipping Address:</label><br>
+      <textarea id="address" name="address" rows="4" required></textarea><br><br>
+
+      <label for="payment">Payment Method:</label><br>
+      <select id="payment" name="payment" required>
+        <option value="cod">Cash on Delivery</option>
+        <option value="card">Credit/Debit Card</option>
+      </select><br><br>
+
+      <button type="submit">Place Order</button>
+    </form>
+
+  {% else %}
+    <p>Your cart is empty. <a href="{{ url_for('index') }}">Shop now</a></p>
+  {% endif %}
+
+</section>
+
+<footer>
+  <p>© 2025 HomeMade Pickles & Snacks. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Veg Pickles - HomeMade Pickles & Snacks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<section class="product-category">
+    <div class="product-grid">
+
+        <!-- Lemon Pickle -->
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/lemonpickle.jpg') }}" alt="Lemon Pickle" />
+            <h3>Lemon Pickle</h3>
+            <p>Spicy and tangy traditional lemon pickle.</p>
+            <p><strong>Price:</strong> ₹140 per 250g</p>
+            <form action="{{ url_for('add_to_cart', product_id='lemon') }}" method="POST">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <!-- Mango Pickle -->
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/mangopickle.jpg') }}" alt="Mango Pickle" />
+            <h3>Mango Pickle</h3>
+            <p>Classic Andhra-style mango pickle.</p>
+            <p><strong>Price:</strong> ₹130 per 250g</p>
+            <form action="{{ url_for('add_to_cart', product_id='mango') }}" method="POST">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <!-- Gongura Pickle -->
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/gongurapickle.jpg') }}" alt="Gongura Pickle" />
+            <h3>Gongura Pickle</h3>
+            <p>Sour leafy pickle with spices.</p>
+            <p><strong>Price:</strong> ₹150 per 250g</p>
+            <form action="{{ url_for('add_to_cart', product_id='gongura') }}" method="POST">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <!-- Tomato Pickle -->
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/tomatopickle.jpg') }}" alt="Tomato Pickle" />
+            <h3>Tomato Pickle</h3>
+            <p>Spicy and sweet tomato pickle.</p>
+            <p><strong>Price:</strong> ₹120 per 250g</p>
+            <form action="{{ url_for('add_to_cart', product_id='tomato') }}" method="POST">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 HomeMade Pickles & Snacks. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
