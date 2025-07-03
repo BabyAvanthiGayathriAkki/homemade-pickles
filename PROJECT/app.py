@@ -1,37 +1,22 @@
-from flask import Flask, render_template, request, redirect, url_for, session,flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 import boto3
-from boto3.dynamodb.conditions import Key,Attr
 import uuid
-from datetime import datetime,timedelta
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from bcrypt import hashpw,gensalt,checkpw
 import os
-import random
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
- 
-@app.context_processor
-def inject_now():
-    return{'now':datetime.now}
 
 # AWS Configuration
-s3_bucket = 'your-s3-bucket-name'
-region_name = 'your-region'
-
-# AWS Clients
-s3 = boto3.client('s3')
-dynamodb = boto3.resource('dynamodb', region_name=region_name)
+dynamodb = boto3.resource('dynamodb', region_name='ap-south-1')
 user_table = dynamodb.Table('Users')
 orders_table = dynamodb.Table('Orders')
 
-
-
-
-EMAIL_ADDRESS = 'your_email@gmail.com'
-EMAIL_PASSWORD = 'your_gmail_app_password'
+# Email Configuration
+EMAIL_ADDRESS = 'avanthiakki@gmail.com'
+EMAIL_PASSWORD = 'inpq fkgo tmku bwhf' # Replace with your actual Gmail App Password
 
 
 app = Flask(__name__)
@@ -129,6 +114,22 @@ def about():
 @app.route('/contact')
 def contact_us():
     return render_template('contact us.html')
+# Email Sending Function
+def send_email(to_email, subject, body):
+    try:
+        msg = MIMEMultipart()
+        msg['From'] = EMAIL_ADDRESS
+        msg['To'] = to_email
+        msg['Subject'] = subject
+        msg.attach(MIMEText(body, 'plain'))
 
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+        server.send_message(msg)
+        server.quit()
+    except Exception as e:
+        print(f"Failed to send email: {e}")
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
